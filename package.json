@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "node-sass": "^8.0.0"
+  },
+  "scripts": {
+    "dev": "npm watch compile:sass | npm run start-live",
+    "compile:sass": "node-sass --watch styles/bio.scss styles/bio.css",
+    "start-live": "browser-sync start --server --files 'css/*.css'"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
