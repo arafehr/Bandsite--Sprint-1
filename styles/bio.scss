@@ -1,2 +1,158 @@
 @import 'variables';
 @import 'typography';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding-inline: 16px;
+  width: 100%;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    padding-inline: 36px;
+    max-width: 1352px;
+  }
+}
+
+header {
+  background-color: $color-primary-black;
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+
+    @media (min-width: 768px) {
+      padding-top: 0;
+      flex-direction: row;
+    }
+  }
+
+  a {font-size: 0;}
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    
+    @media (min-width: 768px) {
+      margin-left: 40px;
+    }
+  
+    a {
+      font-family: 'AvenirNextDemi';
+      font-size: 16px;
+      color: $color-primary-white;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      padding-block: 20px;
+      transition: border-color 0.3s;
+      width: 50%;
+      display: block;
+      text-align: center;
+
+      &:hover,
+      &.active {
+        border-color: $color-primary-white;
+      }
+
+      @media (min-width: 768px) {
+        width: auto;
+        display: inline;
+      }
+    }
+  }
+
+}
+
+.footer {
+  background-color: $color-primary-black;
+  color: $color-primary-white;
+  padding-block: 50px;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      @media (min-width: 768px) {
+        align-items: center;
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+
+    &-logo {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__content {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: 768px) {
+      gap: 20px;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  &__col {
+    width: 100%;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media (min-width: 768px) {
+      gap: 25px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-family: 'AvenirNextDemi';
+    }
+
+    a {
+      color: $color-primary-white;
+      text-decoration: none;
+    }
+  }
+
+  &__copyright {
+    margin-top: 50px;
+  }
+
+  &-logo--mobile {
+    display: block;
+    margin-bottom: 20px;
+    
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
